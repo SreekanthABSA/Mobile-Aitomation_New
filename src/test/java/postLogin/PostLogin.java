@@ -534,6 +534,7 @@ public class PostLogin {
 		WebElement absaRadioButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ExpandableListView/android.view.ViewGroup[2]/android.widget.CheckBox")));
 		absaRadioButton.click();
+		System.out.println("Anu");
 
 		// Select a Branch for future Use
 		/*
