@@ -1,4 +1,4 @@
-package postLogin;
+
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,7 +14,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class PostLogin {
 	public static AndroidDriver<MobileElement> driver;
-	// public static DesiredCapabilities cap;
+	
 	public static URL url;
 
 	public static void main(String[] args) throws InterruptedException {
