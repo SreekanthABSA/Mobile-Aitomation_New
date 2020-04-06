@@ -48,64 +48,56 @@ public class AppTest {
 
 		System.out.println("Device Connected");
 
-		// Payment Journey
+		
 
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 
 	}
 
 	public static void prelogin() throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 80);
-		WebElement alreadyBut = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/alreadyWithAbsaButton")));
+		WebElement alreadyBut = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/alreadyWithAbsaButton")));
 		alreadyBut.click();
 		Thread.sleep(2000);
 		System.out.print("before login Button");
 
 		// Clicking On Log In Button
 
-		WebElement loginBut = driver.findElement(By.id("com.barclays.absa.banking.uat:id/loginButton"));
+		WebElement loginBut = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/loginButton")));
 		Thread.sleep(1000);
 		loginBut.click();
 		Thread.sleep(5000);
 
 		// Login Screen
 
-		// Enter Your account Number Field
+		       // Enter Your account Number Field
 
-		WebElement acNumberText = driver.findElement(By.xpath(
-				"//android.view.ViewGroup[@content-desc=\"Enter your access account number\"]/android.widget.EditText"));
+		WebElement acNumberText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@content-desc=\"Enter your access account number\"]/android.widget.EditText")));
 		Thread.sleep(1000);
-		 acNumberText.sendKeys("4048272392");
+		 acNumberText.sendKeys("4048270853");
 		
-		//// Enter Your pin Number Field
+		      // Enter Your pin Number Field
 		Thread.sleep(1000);
-		WebElement pinNumberText = driver.findElement(
-				By.xpath("//android.view.ViewGroup[@content-desc=\"Enter your pin\"]/android.widget.EditText"));
+		WebElement pinNumberText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@content-desc=\"Enter your pin\"]/android.widget.EditText")));
 		Thread.sleep(1000);
-		pinNumberText.sendKeys("72392");
+		pinNumberText.sendKeys("70853");
+        Thread.sleep(3000);
+		
 
-		// Click On -----> Button On Screen
+		       // click On Login Button
 
-		Thread.sleep(1000);
-
-		// Click On Tick Mark
-
-		// click On Login Button
-
-		WebElement loginButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/loginButton"));
+		WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/loginButton")));
 		Thread.sleep(1000);
 		loginButton.click();
 
-		// Enter password Character
+		      // Enter password Characters
 
-		// First Character of password
-		Thread.sleep(6000);
+		
+		Thread.sleep(5000);
 
-		if (wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password1")))
-				.isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password1"))).isEnabled())
+		{
 			Thread.sleep(2000);
 			WebElement first = driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password1"));
 			first.sendKeys("p");
@@ -113,155 +105,153 @@ public class AppTest {
 
 		}
 
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password2")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password2"))).isEnabled())
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password2")).sendKeys("a");
 			System.out.println("Entered second Character");
 		}
 
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password3")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password3"))).isEnabled())
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password3")).sendKeys("s");
 			System.out.println("Entered 3rd Character");
 		}
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password4")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password4"))).isEnabled())
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password4")).sendKeys("s");
 			System.out.println("Entered 4th Character");
 		}
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password5")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password5"))).isEnabled()) 
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password5")).sendKeys("w");
 			System.out.println("Entered 5th Character");
 
 		}
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password6")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password6"))).isEnabled()) 
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password6")).sendKeys("o");
 			System.out.println("Entered 6th Character");
 		}
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password7")).isEnabled()) {
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password7"))).isEnabled()) 
+		{
 			Thread.sleep(3000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password7")).sendKeys("r");
 			System.out.println("Entered 7th Character");
 		}
 
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password8")).isEnabled()) {
-			Thread.sleep(3000);
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password8"))).isEnabled()) 
+		{
+			Thread.sleep(2000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password8")).sendKeys("d");
 			System.out.println("Entered 8th Character");
 		}
 
-		if (driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password9")).isEnabled()) {
-			Thread.sleep(4000);
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/et_password9"))).isEnabled()) 
+		{
+			Thread.sleep(2000);
 			driver.findElement(By.id("com.barclays.absa.banking.uat:id/et_password9")).sendKeys("1");
 			System.out.println("Entered 9th Character");
 		}
 
 		// Click On Continue
 
-		WebElement continueButton = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/btn_linkDeviceContinue")));
+		WebElement continueButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/btn_linkDeviceContinue")));
 		continueButton.click();
 
 		// Input USSD Field
 
-		WebElement ussdInput = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.android.phone:id/input_field")));
+		WebElement ussdInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.android.phone:id/input_field")));
 		ussdInput.sendKeys("1");
 
 		// Click on Send Button
-		Thread.sleep(4000);
-		WebElement ussdSend = driver.findElement(By.id("android:id/button1"));
+		Thread.sleep(3000);
+		WebElement ussdSend = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
 		ussdSend.click();
 
 		// Click OK On USSD
-		Thread.sleep(10000);
-		WebElement okUssd = driver.findElement(By.id("android:id/button1"));
+		Thread.sleep(3000);
+		WebElement okUssd = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
 		okUssd.click();
 
 		// set Device name
-		Thread.sleep(5000);
-		WebElement deviceName = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/value_edit_text")));
+		Thread.sleep(3000);
+		WebElement deviceName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/value_edit_text")));
 		deviceName.sendKeys("Reddy");
 
 		Thread.sleep(3000);
-		WebElement nextButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/saveAndContinueButton"));
+		WebElement nextButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/saveAndContinueButton")));
 		nextButton.click();
 
 		// PASSCODE SCREEN
 
-		WebElement firstButton = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button1_text_view")));
+		WebElement firstButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button1_text_view")));
 		firstButton.click();
 
-		Thread.sleep(3000);
-		WebElement secButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button3_text_view"));
+		Thread.sleep(2000);
+		WebElement secButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button3_text_view")));
 		secButton.click();
-		;
+		
 
-		Thread.sleep(3000);
-		WebElement thirdButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button5_text_view"));
+		Thread.sleep(2000);
+		WebElement thirdButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button5_text_view")));
 		thirdButton.click();
 		;
 
-		Thread.sleep(3000);
-		WebElement fourthButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button7_text_view"));
+		Thread.sleep(2000);
+		WebElement fourthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button7_text_view")));
 		fourthButton.click();
 
 		Thread.sleep(3000);
-		WebElement fifthButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button9_text_view"));
+		WebElement fifthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button9_text_view")));
 		fifthButton.click();
 
 		// Thread.sleep(4000);
 		// Enter Details on Passcode Second screen
 
-		WebElement screenButton = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button1_text_view")));
+		WebElement screenButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button1_text_view")));
 		screenButton.click();
 
-		Thread.sleep(10000);
-		WebElement screen2Button = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button3_text_view"));
+		Thread.sleep(5000);
+		WebElement screen2Button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button3_text_view")));
 		screen2Button.click();
-		;
+		
 
-		Thread.sleep(4000);
-		WebElement screenthirdButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button5_text_view"));
+		Thread.sleep(2000);
+		WebElement screenthirdButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button5_text_view")));
 		screenthirdButton.click();
-		;
+		
 
-		Thread.sleep(4000);
-		WebElement secondfourthButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button7_text_view"));
+		Thread.sleep(2000);
+		WebElement secondfourthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button7_text_view")));
 		secondfourthButton.click();
 
 		Thread.sleep(4000);
-		WebElement secondfifthButton = driver.findElement(By.id("com.barclays.absa.banking.uat:id/button9_text_view"));
+		WebElement secondfifthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button9_text_view")));
 		secondfifthButton.click();
 
 		// Finger Print No
-		Thread.sleep(7000);
-		WebElement radioButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.RadioGroup/android.widget.RadioButton[2]\r\n"
-						+ "")));
+		Thread.sleep(3000);
+		WebElement radioButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.RadioGroup/android.widget.RadioButton[2]\r\n"+ "")));
 		radioButton.click();
 
 		/// click On Continue Button on Passcode character screen
-		Thread.sleep(7000);
-		WebElement contButton = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/fingerprintAuthProceedButton")));
+		Thread.sleep(3000);
+		WebElement contButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/fingerprintAuthProceedButton")));
 		contButton.click();
 
 		// Click On Explore Button
 
-		WebElement exploreButton = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/exploreButton")));
+		WebElement exploreButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/exploreButton")));
 		exploreButton.click();
 
 		// OK ,GOT IT BUTTON
 
-		WebElement goITButton = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/okGotItButton")));
+		WebElement goITButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/okGotItButton")));
 		goITButton.click();
 }
 }
