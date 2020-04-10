@@ -150,7 +150,7 @@ public class AddEditDeleteElectricity extends AddBeneficiaryCashSend
 		    WebElement confButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
 		    confButton.click();
 		    
-		    System.out.println("Testing Branches Working")
+		    System.out.println("Testing Branches Working");
 		    
 		    
 		    
