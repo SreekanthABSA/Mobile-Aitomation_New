@@ -60,7 +60,7 @@ public class AppTest {
 		WebElement alreadyBut = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/alreadyWithAbsaButton")));
 		alreadyBut.click();
 		Thread.sleep(2000);
-		System.out.print("before login Button");
+		System.out.println("Before Clicking the login Button");
 
 		// Clicking On Log In Button
 
@@ -75,13 +75,13 @@ public class AppTest {
 
 		WebElement acNumberText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@content-desc=\"Enter your access account number\"]/android.widget.EditText")));
 		Thread.sleep(1000);
-		 acNumberText.sendKeys("4048270853");
+		 acNumberText.sendKeys("4048270861");
 		
 		      // Enter Your pin Number Field
 		Thread.sleep(1000);
 		WebElement pinNumberText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@content-desc=\"Enter your pin\"]/android.widget.EditText")));
 		Thread.sleep(1000);
-		pinNumberText.sendKeys("70853");
+		pinNumberText.sendKeys("70861");
         Thread.sleep(3000);
 		
 
@@ -209,6 +209,7 @@ public class AppTest {
 		Thread.sleep(3000);
 		WebElement fifthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button9_text_view")));
 		fifthButton.click();
+		System.out.println("Passcode Setting Done on the First Passcode screen");
 
 		// Thread.sleep(4000);
 		// Enter Details on Passcode Second screen
@@ -233,6 +234,8 @@ public class AppTest {
 		Thread.sleep(4000);
 		WebElement secondfifthButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/button9_text_view")));
 		secondfifthButton.click();
+		System.out.println("Passcode Setting Done on the Second Passcode screen");
+		
 
 		// Finger Print No
 		Thread.sleep(3000);
