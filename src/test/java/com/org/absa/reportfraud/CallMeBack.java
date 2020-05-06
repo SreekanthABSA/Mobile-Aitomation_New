@@ -48,6 +48,7 @@ public class CallMeBack  extends AppTest {
 		//Click 
 		WebElement okCallMe = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
 		okCallMe.click();
+		System.out.println("Call Me Script is working");
 		
 		
 	}

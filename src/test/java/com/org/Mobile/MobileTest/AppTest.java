@@ -256,6 +256,8 @@ public class AppTest {
 
 		WebElement goITButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/okGotItButton")));
 		goITButton.click();
+		
+		System.out.println("Login succesful to mobile");
 }
 }
 

@@ -78,7 +78,7 @@ public class ChangeDigitalLimits  extends AppTest {
 		
 		WebElement doneButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/bottomActionButton")));
 		doneButton.click();
-				
+	    System.out.println("Limits changed succesfully");	
 		
 		
 		

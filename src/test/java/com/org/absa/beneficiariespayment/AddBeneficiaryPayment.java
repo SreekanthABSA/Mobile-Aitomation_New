@@ -120,7 +120,7 @@ public class AddBeneficiaryPayment extends AppTest {
 	    //May Be later 
 	    WebElement maybeLater = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.barclays.absa.banking.uat:id/maybeLaterTextView")));
 	    maybeLater.click();
-		
+		System.out.println("Added Beneficiary succesfully");
 		
 		
 	}
